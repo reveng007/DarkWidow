@@ -13,5 +13,8 @@
 ### = EDR/UserLand hook Bypass Probably! -> Don't have EDR to check it though ;(
 
 
-### Links that Helped me:
-1. TIB: https://en.wikipedia.org/wiki/Win32_Thread_Information_Block
+### Links that helped me:
+1. TIB:
+   - https://en.wikipedia.org/wiki/Win32_Thread_Information_Block
+   - https://www.wikiwand.com/en/Win32_Thread_Information_Block
+2. 
