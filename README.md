@@ -22,15 +22,16 @@
    - https://stackoverflow.com/questions/10810203/what-is-the-fs-gs-register-intended-for#:~:text=The%20registers%20FS%20and%20GS,to%20access%20thread%2Dspecific%20memory.
 3. PEB LDR structure: 
    - https://www.youtube.com/watch?v=9L9I1T5QDg4&t=205s
-   - A pic of process Memory from the Above link:
+   - A pic of process Memory from the Above link:\
    ![image](https://github.com/reveng007/DarkWidow/assets/61424547/df32d679-e2e7-44cd-9291-3246cb86ef4f)
 
    - From [labs.cognisys.group](https://labs.cognisys.group/posts/Combining-Indirect-Dynamic-Syscalls-and-API-Hashing/#retrieving-apis-base-address), a blog by [@D1rkMtr
-](https://twitter.com/D1rkMtr):
+](https://twitter.com/D1rkMtr):\
    ![image](https://github.com/reveng007/DarkWidow/assets/61424547/dad91491-4ab2-481a-90a5-7842816507da)
 
 4. TIB -> TEB -> PEB -> Resolve API
+   - https://stackoverflow.com/questions/41277888/iterating-over-peb-dllname-shows-only-exe-name
    - https://doxygen.reactos.org/d7/d55/ldrapi_8c_source.html#l01124
-   - A pic of the snippet from the above link, which I used here to resolve API dynamically without HardCoding Offsets:
+   - A pic of the snippet from the above link, which I used here to resolve API dynamically without HardCoding Offsets:\
      ![image](https://github.com/reveng007/DarkWidow/assets/61424547/9aa9f990-e6fc-419d-87f0-c058c7ba61a2)
 
