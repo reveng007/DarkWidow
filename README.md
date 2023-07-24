@@ -29,3 +29,8 @@
 ](https://twitter.com/D1rkMtr):
    ![image](https://github.com/reveng007/DarkWidow/assets/61424547/dad91491-4ab2-481a-90a5-7842816507da)
 
+4. TIB -> TEB -> PEB -> Resolve API
+   - https://doxygen.reactos.org/d7/d55/ldrapi_8c_source.html#l01124
+   - A pic of the snippet from the above link, which I used here to resolve API dynamically without HardCoding Offsets:
+     ![image](https://github.com/reveng007/DarkWidow/assets/61424547/9aa9f990-e6fc-419d-87f0-c058c7ba61a2)
+
