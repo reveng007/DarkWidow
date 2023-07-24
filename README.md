@@ -6,7 +6,7 @@
 - Spawns a sacrificial Process as target process
 - ACG(Arbitary Code Guard)/BlockDll mitigation policy on spawned process
 - PPID spoofing (Emotet method)
-- Api resolving from TIB
+- Api resolving from TIB (TIB -> TEB -> PEB -> resolve Api)
 - API hashing
 
 ### = EDR/UserLand hook Bypass Probably! -> Don't have EDR to check it though ;(
