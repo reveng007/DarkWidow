@@ -17,4 +17,7 @@
 1. TIB:
    - https://en.wikipedia.org/wiki/Win32_Thread_Information_Block
    - https://www.wikiwand.com/en/Win32_Thread_Information_Block
-2. 
+2. GS and FS register:
+   - https://stackoverflow.com/questions/39137043/what-is-the-gs-register-used-for-on-windows
+   - https://stackoverflow.com/questions/10810203/what-is-the-fs-gs-register-intended-for#:~:text=The%20registers%20FS%20and%20GS,to%20access%20thread%2Dspecific%20memory.
+3. 
