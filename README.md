@@ -49,7 +49,7 @@
    ![image](https://github.com/reveng007/DarkWidow/assets/61424547/dceef77b-c3a4-464f-812d-df8f03214558)
 
 6. PPID Spoofing Detection:
-   - https://www.ired.team/offensive-security/defense-evasion/parent-process-id-ppid-spoofing by [@spotheplanet](https://twitter.com/spotheplanet)
+   - [PPID Spoofing Detect](https://www.ired.team/offensive-security/defense-evasion/parent-process-id-ppid-spoofing) by [@spotheplanet](https://twitter.com/spotheplanet)
    - If got time, I will be adding a detection Portion to this portion! -> _[Remaining..............................................!]_
 
 7. Moneta Detection and PESieve Detection:
