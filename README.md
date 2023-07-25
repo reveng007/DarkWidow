@@ -19,7 +19,7 @@
 
 -----
 
-### Links that helped me:
+### Portions of the Code and links those helped:
 1. TIB:
    - https://en.wikipedia.org/wiki/Win32_Thread_Information_Block
    - https://www.wikiwand.com/en/Win32_Thread_Information_Block
@@ -27,7 +27,7 @@
    - https://stackoverflow.com/questions/39137043/what-is-the-gs-register-used-for-on-windows
    - https://stackoverflow.com/questions/10810203/what-is-the-fs-gs-register-intended-for#:~:text=The%20registers%20FS%20and%20GS,to%20access%20thread%2Dspecific%20memory.
 3. PEB LDR structure: 
-   - https://www.youtube.com/watch?v=9L9I1T5QDg4&t=205s
+   - [BlackHat - What Malware Authors Don't Want You to Know - Evasive Hollow Process Injection](https://www.youtube.com/watch?v=9L9I1T5QDg4&t=205s) by [@monnappa22](https://twitter.com/monnappa22)
    - A pic of process Memory from the Above link:\
    ![image](https://github.com/reveng007/DarkWidow/assets/61424547/df32d679-e2e7-44cd-9291-3246cb86ef4f)
 
@@ -47,3 +47,11 @@
    - [Wraith](https://github.com/reveng007/AQUARMOURY/blob/1923e65190875f7c61c76fb430d526e5deaa062a/Wraith/Src/Injector.h) by [@winterknife](https://twitter.com/_winterknife_)
    - [spawn](https://github.com/boku7/spawn) and [HOLLOW](https://github.com/boku7/HOLLOW) by [@0xBoku](https://twitter.com/0xBoku)
    ![image](https://github.com/reveng007/DarkWidow/assets/61424547/dceef77b-c3a4-464f-812d-df8f03214558)
+
+6. PPID Spoofing Detection:
+   - https://www.ired.team/offensive-security/defense-evasion/parent-process-id-ppid-spoofing by [@spotheplanet](https://twitter.com/spotheplanet)
+   - If got time, I will be adding a detection Portion to this portion! -> _[Remaining..............................................!]_
+
+7. Moneta Detection and PESieve Detection:
+   - awdwadadwwd
+   - adawdd
