@@ -6,12 +6,18 @@
 3. Remote Process Injection via APC Early Bird
 4. Spawns a sacrificial Process as the target process
 5. ACG(Arbitrary Code Guard)/BlockDll mitigation policy on spawned process
-6. PPID spoofing (Emotet method) (MITRE ATT&CK TTP: [T1134](https://attack.mitre.org/techniques/T1134/004/))
+6. PPID spoofing (MITRE ATT&CK TTP: [T1134](https://attack.mitre.org/techniques/T1134/004/))
 7. Api resolving from TIB (Directly via offset (from TIB) -> TEB -> PEB -> resolve Api)
 8. API hashing
 
 ### = EDR/UserLand hook Bypass Probably! -> Don't have EDR to check it though ;(
 
+-----
+
+### Further Improvements:
+1. PPID spoofing (**Emotet method**)
+
+-----
 
 ### Links that helped me:
 1. TIB:
