@@ -6,9 +6,13 @@
 3. Remote Process Injection via APC Early Bird
 4. Spawns a sacrificial Process as the target process
 5. ACG(Arbitrary Code Guard)/BlockDll mitigation policy on spawned process
-6. PPID spoofing (MITRE ATT&CK TTP: [T1134](https://attack.mitre.org/techniques/T1134/004/))
+6. PPID spoofing (**MITRE ATT&CK TTP: [T1134.004](https://attack.mitre.org/techniques/T1134/004/)**)
 7. Api resolving from TIB (Directly via offset (from TIB) -> TEB -> PEB -> resolve Api)
 8. API hashing
+
+### Bonus: If blessed with Admin privilege =>
+1. Disables Event Log via Suspending EventLog Service Threads (**MITRE ATT&CK TTP: [T1562.002](https://attack.mitre.org/techniques/T1562/002/)**)
+> (Disadv: If threads are resumed, all events that occurred during the suspension of Event Logger, get logged Again!)
 
 ### = EDR/Ring-3/UserLand hook Bypass Probably! -> Don't have EDR to check it though ;(
 
@@ -16,7 +20,7 @@
 
 ### Further Improvements:
 1. PPID spoofing (**Emotet method**)
-
+2. ***Much Stabler*** Use Case of EventLog Disabling!
 -----
 
 ### Portions of the Code and links those helped:
