@@ -73,10 +73,10 @@
    **To** Here:
    ![image](https://github.com/reveng007/DarkWidow/assets/61424547/279f906b-faae-477e-9192-8bc0ec950376)
 
-10. Killing Event Log Threads:\
+10. Killing Event Log Threads:
     - [rto-win-evasion](https://institute.sektor7.net/rto-win-evasion) by [@SEKTOR7net](https://twitter.com/Sektor7Net)
     - [Phant0m](https://github.com/hlldz/Phant0m) by [@hlldz](https://twitter.com/hlldz)
-    - [disabling-windows-event-logs-by-suspending-eventlog-service-threads](https://www.ired.team/offensive-security/defense-evasion/disabling-windows-event-logs-by-suspending-eventlog-service-threads) by [@spotheplanet](https://twitter.com/spotheplanet)
+    - [disabling-windows-event-logs-by-suspending-eventlog-service-threads](https://www.ired.team/offensive-security/defense-evasion/disabling-windows-event-logs-by-suspending-eventlog-service-threads) by [@spotheplanet](https://twitter.com/spotheplanet)\
     **From** here:\
     ![image](https://github.com/reveng007/DarkWidow/assets/61424547/c5985623-9974-424a-b739-64097ee98747)\
     **To** here:\
