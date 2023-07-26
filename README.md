@@ -64,7 +64,10 @@
 ![image](https://github.com/reveng007/DarkWidow/assets/61424547/c2005b8c-1750-4046-bffa-9d09eb4472a8)
 ![WhatsApp Image 2023-07-26 at 10 55 15](https://github.com/reveng007/DarkWidow/assets/61424547/28b22684-3403-4be2-a862-e963339e2240)
 
-9. Setting SeDebugPrivilege:
-     From Here:
-       
+9. Setting SeDebugPrivilege:\
+   **From** Here:
+   ![image](https://github.com/reveng007/DarkWidow/assets/61424547/f345af8c-b2b2-4918-b00b-f481694f29ec)
+   **To** Here:
+   ![image](https://github.com/reveng007/DarkWidow/assets/61424547/279f906b-faae-477e-9192-8bc0ec950376)
+
 
