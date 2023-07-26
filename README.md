@@ -55,3 +55,7 @@
 7. Moneta Detection and PESieve Detection:
    - awdwadadwwd
    - adawdd
+
+8. EventLogger Config, I used:
+![image](https://github.com/reveng007/DarkWidow/assets/61424547/c2005b8c-1750-4046-bffa-9d09eb4472a8)
+![WhatsApp Image 2023-07-26 at 10 55 15](https://github.com/reveng007/DarkWidow/assets/61424547/28b22684-3403-4be2-a862-e963339e2240)
