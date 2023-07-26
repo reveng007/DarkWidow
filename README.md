@@ -10,7 +10,7 @@
 7. Api resolving from TIB (Directly via offset (from TIB) -> TEB -> PEB -> resolve Api)
 8. API hashing
 
-### = EDR/UserLand hook Bypass Probably! -> Don't have EDR to check it though ;(
+### = EDR/Ring-3/UserLand hook Bypass Probably! -> Don't have EDR to check it though ;(
 
 -----
 
