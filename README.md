@@ -9,7 +9,7 @@ This is a Dropper/PostExploitation Tool (or can be used in both situations) targ
 5. ACG(Arbitrary Code Guard)/BlockDll mitigation policy on spawned process
 6. PPID spoofing (**MITRE ATT&CK TTP: [T1134.004](https://attack.mitre.org/techniques/T1134/004/)**)
 7. Api resolving from TIB (Directly via offset (from TIB) -> TEB -> PEB -> resolve Nt Api)
-8. API hashing
+8. Cursed Nt API hashing
 
 ### Bonus: If blessed with Admin privilege =>
 1. Disables Event Log via _killing_ EventLog Service Threads (**MITRE ATT&CK TTP: [T1562.002](https://attack.mitre.org/techniques/T1562/002/)**)
@@ -21,6 +21,18 @@ This is a Dropper/PostExploitation Tool (or can be used in both situations) targ
 #### While Killing only those threads in the indirect syscall implant, was facing an error. I was unable to get the "**eventlog**" _SubProcessTag Value_. So thought of killing all threads, i.e. killing the whole process (responsible **svchost.exe**). Yeah creating ***an IOC***!.
 
 ### = EDR/Ring-3/UserLand hook Bypass Probably! -> Don't have EDR to check it though ;(
+
+### Compile:
+1.
+```
+Directly via VS compiler:
+```
+![image](https://github.com/reveng007/Learning-EDR-and-EDR_Evasion/assets/61424547/622c39a1-c3b3-4388-ad3a-5a36d18e29ff)
+
+2. Also via compile.bat (prefer option 1.)
+```
+./compile.bat
+```
 
 ### Usage:
 ```
@@ -36,7 +48,7 @@ https://github.com/reveng007/DarkWidow/assets/61424547/1c61ff7f-5283-47b5-9dab-3
 
 ### Further Improvements:
 1. PPID spoofing (**Emotet method**)
-2. ***Much Stabler*** Use Case of EventLog Disabling!
+2. ***Much Stealthier*** Use Case of EventLog Disabling!
 -----
 
 ### Portions of the Code and links those helped:
@@ -81,6 +93,15 @@ https://github.com/reveng007/DarkWidow/assets/61424547/1c61ff7f-5283-47b5-9dab-3
 
 9. Capa Scan:\
    ![image](https://github.com/reveng007/DarkWidow/assets/61424547/e663a74d-6ccf-438d-a902-795f83a9d5db)
+
+10. How Thread Stack Looks of the Implant Process:
+
+| Implant Process  |   Legit Cmd process    |
+| ---------------- | ---------------- |  
+|  ![image](https://github.com/reveng007/MaldevTechniques/assets/61424547/b845bd5b-9ca2-4a73-aa04-16930c7a1d5e) | ![image](https://github.com/reveng007/MaldevTechniques/assets/61424547/940d87ad-2c87-4e91-b7d4-2c0e2f3d5dfb) |
+
+> **It follows that by executing the return instruction in the memory of the ntdll.dll in the indirect syscall POC, the return address can be successfully spoofed, the ntdll.dll can be placed at the top of the call stack and the EDR will interpret a higher legitimacy.** - [@VirtualAllocEx](https://twitter.com/VirtualAllocEx) from [DirectSyscall Vs Indirect Syscall](https://redops.at/blog/direct-syscalls-vs-indirect-syscalls)\
+Also thanks to, [@peterwintrsmith](https://twitter.com/peterwintrsmith)!
 
 10. EventLogger Config, I used:
 ![image](https://github.com/reveng007/DarkWidow/assets/61424547/c2005b8c-1750-4046-bffa-9d09eb4472a8)
