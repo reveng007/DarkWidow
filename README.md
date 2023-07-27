@@ -95,3 +95,8 @@ This is a Dropper/PostExploitation Tool (or can be used in both situations) targ
 5. [@spotheplanet](https://twitter.com/spotheplanet)
 6. [@0xBoku](https://twitter.com/0xBoku)
 7. [@winterknife](https://twitter.com/_winterknife_)
+8. [@monnappa22](https://twitter.com/monnappa22)
+9. [@_xpn_](https://twitter.com/_xpn_)
+10. [@hlldz](https://twitter.com/hlldz)
+
+I hope I didn't miss someone!
