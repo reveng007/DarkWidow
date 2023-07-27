@@ -1,4 +1,5 @@
 # DarkWidow
+This is a Dropper/PostExploitation Tool (or can be used in both situations) targeting Windows.
 
 ### Capabilities:
 1. Indirect Dynamic Syscall
@@ -7,14 +8,29 @@
 4. Spawns a sacrificial Process as the target process
 5. ACG(Arbitrary Code Guard)/BlockDll mitigation policy on spawned process
 6. PPID spoofing (**MITRE ATT&CK TTP: [T1134.004](https://attack.mitre.org/techniques/T1134/004/)**)
-7. Api resolving from TIB (Directly via offset (from TIB) -> TEB -> PEB -> resolve Api)
+7. Api resolving from TIB (Directly via offset (from TIB) -> TEB -> PEB -> resolve Nt Api)
 8. API hashing
 
 ### Bonus: If blessed with Admin privilege =>
-1. Disables Event Log via Suspending EventLog Service Threads (**MITRE ATT&CK TTP: [T1562.002](https://attack.mitre.org/techniques/T1562/002/)**)
-> (Disadv: If threads are resumed, all events that occurred during the suspension of Event Logger, get logged Again!)
+1. Disables Event Log via _killing_ EventLog Service Threads (**MITRE ATT&CK TTP: [T1562.002](https://attack.mitre.org/techniques/T1562/002/)**)
+> **Disadv**: If threads are resumed, all events that occurred during the suspension of Event Logger, get logged Again!
+
+**So, thought of killing them instead!**
+> "It's more Invasive than suspension, but the decision is always up to the operator. Besides, killing threads get logged on the kernel level" - [@SEKTOR7net](https://twitter.com/Sektor7Net)
+
+#### While Killing only those threads in the indirect syscall implant, was facing an error. I was unable to get the "**eventlog**" _SubProcessTag Value_. So thought of killing all threads, i.e. killing the whole process (responsible **svchost.exe**). Yeah creating ***an IOC***!.
 
 ### = EDR/Ring-3/UserLand hook Bypass Probably! -> Don't have EDR to check it though ;(
+
+### Usage:
+```
+PS C:> .\x64\Release\indirect.exe
+[!] Wrong!
+[->] Syntax: .\x64\Release\indirect.exe <PPID to spoof>
+```
+### In Action:
+
+https://github.com/reveng007/DarkWidow/assets/61424547/1c61ff7f-5283-47b5-9dab-329ff1064103
 
 -----
 
@@ -39,7 +55,7 @@
 ](https://twitter.com/D1rkMtr):\
    ![image](https://github.com/reveng007/DarkWidow/assets/61424547/dad91491-4ab2-481a-90a5-7842816507da)
 
-4. TIB -> TEB -> PEB -> Resolve API
+4. TIB -> TEB -> PEB -> Resolve Nt API and API hashing
    - https://stackoverflow.com/questions/41277888/iterating-over-peb-dllname-shows-only-exe-name
    - https://doxygen.reactos.org/d7/d55/ldrapi_8c_source.html#l01124
    - A pic of the snippet from the above link, which I used here to resolve API dynamically without HardCoding Offsets:\
@@ -56,10 +72,47 @@
    - [PPID Spoofing Detect](https://www.ired.team/offensive-security/defense-evasion/parent-process-id-ppid-spoofing) by [@spotheplanet](https://twitter.com/spotheplanet)
    - If got time, I will be adding a detection Portion to this portion! -> _[Remaining..............................................!]_
 
-7. Moneta Detection and PESieve Detection:
-   - awdwadadwwd
-   - adawdd
+7. Moneta Detection and PESieve Detection:\
+   - **Moneta**:\
+   ![image](https://github.com/reveng007/DarkWidow/assets/61424547/d8238381-d373-49b6-9d8c-9773bff90f22)
 
-8. EventLogger Config, I used:
+   - **PESieve**:\
+   ![image](https://github.com/reveng007/DarkWidow/assets/61424547/7964935a-8013-439e-ab97-4441fe19395a)
+
+9. Capa Scan:\
+   ![image](https://github.com/reveng007/DarkWidow/assets/61424547/e663a74d-6ccf-438d-a902-795f83a9d5db)
+
+10. EventLogger Config, I used:
 ![image](https://github.com/reveng007/DarkWidow/assets/61424547/c2005b8c-1750-4046-bffa-9d09eb4472a8)
 ![WhatsApp Image 2023-07-26 at 10 55 15](https://github.com/reveng007/DarkWidow/assets/61424547/28b22684-3403-4be2-a862-e963339e2240)
+
+11. Setting SeDebugPrivilege:\
+   **From** Here:
+   ![image](https://github.com/reveng007/DarkWidow/assets/61424547/f345af8c-b2b2-4918-b00b-f481694f29ec)
+   **To** Here:
+   ![image](https://github.com/reveng007/DarkWidow/assets/61424547/279f906b-faae-477e-9192-8bc0ec950376)
+
+12. Killing Event Log Threads:
+    - [rto-win-evasion](https://institute.sektor7.net/rto-win-evasion) by [@SEKTOR7net](https://twitter.com/Sektor7Net)
+    - [Phant0m](https://github.com/hlldz/Phant0m) by [@hlldz](https://twitter.com/hlldz)
+    - [Goblin](https://github.com/reveng007/AQUARMOURY/blob/master/Goblin/Src/EventLog.h) by [@winterknife](https://twitter.com/_winterknife_)
+    - [disabling-windows-event-logs-by-suspending-eventlog-service-threads](https://www.ired.team/offensive-security/defense-evasion/disabling-windows-event-logs-by-suspending-eventlog-service-threads) by [@spotheplanet](https://twitter.com/spotheplanet)\
+    **From** here:\
+    ![image](https://github.com/reveng007/DarkWidow/assets/61424547/c5985623-9974-424a-b739-64097ee98747)\
+    **To** here:\
+    ![image](https://github.com/reveng007/DarkWidow/assets/61424547/4d039ea6-730e-414c-8cf0-afa5960f4480)
+    - **This Method, Ended up causing errors in indirect syscall implementation. So, I ended up killing all those threads present within responsible svchost.exe** (reason: [Go up](https://github.com/reveng007/DarkWidow/edit/main/README.md#bonus-if-blessed-with-admin-privilege-)).
+
+### Major Thanks for helping me out (Directly/indirectly (pun NOT intended :))):
+1. [@SEKTOR7net](https://twitter.com/Sektor7Net)
+2. [@peterwintrsmith](https://twitter.com/peterwintrsmith)
+3. [@Jean_Maes_1994](https://twitter.com/Jean_Maes_1994)
+4. [@D1rkMtr](https://twitter.com/D1rkMtr)
+5. [@spotheplanet](https://twitter.com/spotheplanet)
+6. [@0xBoku](https://twitter.com/0xBoku)
+7. [@winterknife](https://twitter.com/_winterknife_)
+8. [@monnappa22](https://twitter.com/monnappa22)
+9. [@_xpn_](https://twitter.com/_xpn_)
+10. [@hlldz](https://twitter.com/hlldz)
+
+I hope I didn't miss someone!
