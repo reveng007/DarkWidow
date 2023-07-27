@@ -42,7 +42,7 @@ PS C:> .\x64\Release\indirect.exe
 ```
 ### In Action:
 
-https://github.com/reveng007/DarkWidow/assets/61424547/1c61ff7f-5283-47b5-9dab-329ff1064103
+https://github.com/reveng007/DarkWidow/assets/61424547/62a90c5b-84af-4389-8ddc-9f7926debdcf
 
 -----
 
