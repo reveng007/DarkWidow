@@ -87,5 +87,11 @@ This is a Dropper/PostExploitation Tool (or can be used in both situations) targ
     ![image](https://github.com/reveng007/DarkWidow/assets/61424547/4d039ea6-730e-414c-8cf0-afa5960f4480)
     - **This Method, Ended up causing errors in indirect syscall implementation. So, I ended up killing all those threads present within responsible svchost.exe** (reason: [Go up](https://github.com/reveng007/DarkWidow/edit/main/README.md#bonus-if-blessed-with-admin-privilege-)).
 
-### Major Thanks to:
-[@peterwintrsmith](https://twitter.com/peterwintrsmith), [@D1rkMtr](https://twitter.com/D1rkMtr) and [@Jean_Maes_1994](https://twitter.com/Jean_Maes_1994) for helping me out when stuck!
+### Major Thanks for helping me out (Directly/indirectly (pun NOT intended :))):
+1. [@SEKTOR7net](https://twitter.com/Sektor7Net)
+2. [@peterwintrsmith](https://twitter.com/peterwintrsmith)
+3. [@Jean_Maes_1994](https://twitter.com/Jean_Maes_1994)
+4. [@D1rkMtr](https://twitter.com/D1rkMtr)
+5. [@spotheplanet](https://twitter.com/spotheplanet)
+6. [@0xBoku](https://twitter.com/0xBoku)
+7. [@winterknife](https://twitter.com/_winterknife_)
