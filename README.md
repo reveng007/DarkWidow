@@ -17,6 +17,8 @@
 **So, thought of killing them instead!**
 > "It's more Invasive than suspension, but the decision is always up to the operator. Besides, killing threads get logged on the kernel level" - [@SEKTOR7net](https://twitter.com/Sektor7Net)
 
+#### While Killing only those threads in the indirect syscall implant, was facing an error. I was unable to get the "**eventlog**" _SubProcessTag Value_. So thought of killing all threads, i.e. killing the whole process (responsible **svchost.exe**) and then restarting EventLog Service _again_ in the background.
+
 ### = EDR/Ring-3/UserLand hook Bypass Probably! -> Don't have EDR to check it though ;(
 
 -----
