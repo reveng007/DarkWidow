@@ -8,7 +8,7 @@ This is a Dropper/PostExploitation Tool (or can be used in both situations) targ
 4. Spawns a sacrificial Process as the target process
 5. ACG(Arbitrary Code Guard)/BlockDll mitigation policy on spawned process
 6. PPID spoofing (**MITRE ATT&CK TTP: [T1134.004](https://attack.mitre.org/techniques/T1134/004/)**)
-7. Api resolving from TIB (Directly via offset (from TIB) -> TEB -> PEB -> resolve Api)
+7. Api resolving from TIB (Directly via offset (from TIB) -> TEB -> PEB -> resolve Nt Api)
 8. API hashing
 
 ### Bonus: If blessed with Admin privilege =>
@@ -45,7 +45,7 @@ This is a Dropper/PostExploitation Tool (or can be used in both situations) targ
 ](https://twitter.com/D1rkMtr):\
    ![image](https://github.com/reveng007/DarkWidow/assets/61424547/dad91491-4ab2-481a-90a5-7842816507da)
 
-4. TIB -> TEB -> PEB -> Resolve API
+4. TIB -> TEB -> PEB -> Resolve Nt API
    - https://stackoverflow.com/questions/41277888/iterating-over-peb-dllname-shows-only-exe-name
    - https://doxygen.reactos.org/d7/d55/ldrapi_8c_source.html#l01124
    - A pic of the snippet from the above link, which I used here to resolve API dynamically without HardCoding Offsets:\
