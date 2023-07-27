@@ -1,4 +1,5 @@
 # DarkWidow
+This is a Dropper/PostExploitation Tool (or can be used in both situations) targeting Windows.
 
 ### Capabilities:
 1. Indirect Dynamic Syscall
@@ -17,7 +18,7 @@
 **So, thought of killing them instead!**
 > "It's more Invasive than suspension, but the decision is always up to the operator. Besides, killing threads get logged on the kernel level" - [@SEKTOR7net](https://twitter.com/Sektor7Net)
 
-#### While Killing only those threads in the indirect syscall implant, was facing an error. I was unable to get the "**eventlog**" _SubProcessTag Value_. So thought of killing all threads, i.e. killing the whole process (responsible **svchost.exe**) and then restarting EventLog Service _again_ in the background.
+#### While Killing only those threads in the indirect syscall implant, was facing an error. I was unable to get the "**eventlog**" _SubProcessTag Value_. So thought of killing all threads, i.e. killing the whole process (responsible **svchost.exe**). Yeah creating ***an IOC***!.
 
 ### = EDR/Ring-3/UserLand hook Bypass Probably! -> Don't have EDR to check it though ;(
 
@@ -78,9 +79,13 @@
 10. Killing Event Log Threads:
     - [rto-win-evasion](https://institute.sektor7.net/rto-win-evasion) by [@SEKTOR7net](https://twitter.com/Sektor7Net)
     - [Phant0m](https://github.com/hlldz/Phant0m) by [@hlldz](https://twitter.com/hlldz)
+    - [Goblin](https://github.com/reveng007/AQUARMOURY/blob/master/Goblin/Src/EventLog.h) by [@winterknife](https://twitter.com/_winterknife_)
     - [disabling-windows-event-logs-by-suspending-eventlog-service-threads](https://www.ired.team/offensive-security/defense-evasion/disabling-windows-event-logs-by-suspending-eventlog-service-threads) by [@spotheplanet](https://twitter.com/spotheplanet)\
     **From** here:\
     ![image](https://github.com/reveng007/DarkWidow/assets/61424547/c5985623-9974-424a-b739-64097ee98747)\
     **To** here:\
     ![image](https://github.com/reveng007/DarkWidow/assets/61424547/4d039ea6-730e-414c-8cf0-afa5960f4480)
+    - **This Method, Ended up causing errors in indirect syscall implementation. So, I ended up killing all those threads present within responsible svchost.exe** (reason: [Go up](https://github.com/reveng007/DarkWidow/edit/main/README.md#bonus-if-blessed-with-admin-privilege-)).
 
+### Major Thanks to:
+[@peterwintrsmith](https://twitter.com/peterwintrsmith), [@D1rkMtr](https://twitter.com/D1rkMtr) and [@Jean_Maes_1994](https://twitter.com/Jean_Maes_1994) for helping me out when stuck!
