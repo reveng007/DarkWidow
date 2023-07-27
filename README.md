@@ -137,3 +137,6 @@ Also thanks to, [@peterwintrsmith](https://twitter.com/peterwintrsmith)!
 10. [@hlldz](https://twitter.com/hlldz)
 
 I hope I didn't miss someone!
+
+### This project is a part of my journey to learn about EDR World! => [Learning-EDR-and-EDR_Evasion](https://github.com/reveng007/Learning-EDR-and-EDR_Evasion)
+
