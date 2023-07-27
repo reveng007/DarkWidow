@@ -70,6 +70,8 @@ https://github.com/reveng007/DarkWidow/assets/61424547/1c61ff7f-5283-47b5-9dab-3
 4. TIB -> TEB -> PEB -> Resolve Nt API and API hashing
    - https://stackoverflow.com/questions/41277888/iterating-over-peb-dllname-shows-only-exe-name
    - https://doxygen.reactos.org/d7/d55/ldrapi_8c_source.html#l01124
+   - [labs.cognisys.group](https://labs.cognisys.group/posts/Combining-Indirect-Dynamic-Syscalls-and-API-Hashing/#retrieving-apis-base-address), a blog by [@D1rkMtr
+](https://twitter.com/D1rkMtr)
    - A pic of the snippet from the above link, which I used here to resolve API dynamically without HardCoding Offsets:\
      ![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/3.png)
 
