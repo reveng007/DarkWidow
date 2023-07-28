@@ -141,10 +141,11 @@ Also thanks to, [@peterwintrsmith](https://twitter.com/peterwintrsmith)!
 4. [@D1rkMtr](https://twitter.com/D1rkMtr)
 5. [@spotheplanet](https://twitter.com/spotheplanet)
 6. [@0xBoku](https://twitter.com/0xBoku)
-7. [@winterknife](https://twitter.com/_winterknife_)
-8. [@monnappa22](https://twitter.com/monnappa22)
-9. [@_xpn_](https://twitter.com/_xpn_)
-10. [@hlldz](https://twitter.com/hlldz)
+7. [@Sh0ckFR](https://twitter.com/Sh0ckFR)
+8. [@winterknife](https://twitter.com/_winterknife_)
+9. [@monnappa22](https://twitter.com/monnappa22)
+10. [@_xpn_](https://twitter.com/_xpn_)
+11. [@hlldz](https://twitter.com/hlldz)
 
 I hope I didn't miss someone!
 
