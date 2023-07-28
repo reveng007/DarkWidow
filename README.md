@@ -46,7 +46,7 @@ https://github.com/reveng007/DarkWidow/assets/61424547/62a90c5b-84af-4389-8ddc-9
 
 ### Sofos XDR Bypass:
 
-![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/sofosXDR.png)
+![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/SofosXDR.PNG)
 
 -----
 
