@@ -29,6 +29,10 @@ Directly via VS compiler:
 ```
 ![image](https://github.com/reveng007/Learning-EDR-and-EDR_Evasion/assets/61424547/622c39a1-c3b3-4388-ad3a-5a36d18e29ff)
 
+#### Also add **/MT** compiler flag! => To statically links CRT functions together in a binary (Yeah, U guessed it, it bloats the implant)
+
+![image](https://github.com/reveng007/DarkWidow/assets/61424547/58e9a9d4-e068-4364-8114-96744bdbc0a7)
+
 2. Also via compile.bat (prefer option 1.)
 ```
 ./compile.bat
