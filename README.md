@@ -20,7 +20,7 @@ This is a Dropper/PostExploitation Tool (or can be used in both situations) targ
 
 #### While Killing only those threads in the indirect syscall implant, was facing an error. I was unable to get the "**eventlog**" _SubProcessTag Value_. So thought of killing all threads, i.e. killing the whole process (responsible **svchost.exe**). Yeah creating ***an IOC***!.
 
-### = EDR/Ring-3/UserLand hook Bypass Probably! -> Don't have EDR to check it though ;(
+### = EDR/Ring-3/UserLand hook Bypass!
 
 ### Compile:
 1.
