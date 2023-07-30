@@ -83,6 +83,25 @@ https://github.com/reveng007/DarkWidow/assets/61424547/62a90c5b-84af-4389-8ddc-9
    - A pic of the snippet from the above link, which I used here to resolve API dynamically without HardCoding Offsets:\
      ![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/3.png)
 
+   - The Api hashing Script that I have Used:
+```python
+def create_hash(input_string):
+    # Initialize the hash value to zero
+    hash_value = 0
+
+    # Iterate through each character in the input string
+    for char in input_string:
+        # Add the ASCII value of the character to the hash_value
+        hash_value += ord(char)
+
+    return hash_value
+
+if __name__ == "__main__":
+    input_string = input("Enter the string to hash: ")
+    hashed_value = create_hash(input_string)
+    print("Hash:", hashed_value)
+```
+
 5. ACG(Arbitrary Code Guard)/BlockDll mitigation policy:
    - links:
    - [Protecting Your Malware](https://blog.xpnsec.com/protecting-your-malware/) by [@_xpn_](https://twitter.com/_xpn_)
