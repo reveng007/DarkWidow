@@ -16,7 +16,7 @@ BOOL flag = TRUE;
 // [link: https://www.codeproject.com/Questions/103661/how-to-get-current-Process-HANDLE]
 // Return value of currentProcess() is a pseudo handle to the current process
 // => (HANDLE)-1 => 0xFFFFFFFF" (MSDN)
-//#define MyCurrentProcess()	((HANDLE)-1)
+#define MyCurrentProcess()	((HANDLE)-1)
 
 #define _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable:4996)

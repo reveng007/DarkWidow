@@ -8,7 +8,7 @@ int UpdatePriv(LPCTSTR lpszPrivilege)
     TOKEN_PRIVILEGES tp;
     LUID luid;
 
-    if (!OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES, &hToken))
+    if (!OpenProcessToken(MyCurrentProcess(), TOKEN_ADJUST_PRIVILEGES, &hToken))
     {
         printf("OpenProcessToken() failed! (%u)\n", GetLastError());
         return -1;
