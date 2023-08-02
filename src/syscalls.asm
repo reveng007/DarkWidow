@@ -25,6 +25,13 @@
 					ret
 	sysNtAllocateVirtualMemory endp
 
+	sysNtWriteVirtualMemory proc
+					mov r10, rcx
+					mov ax, SSN
+					jmp	qword ptr syscallAddr
+					ret
+	sysNtWriteVirtualMemory endp
+
 	sysNtProtectVirtualMemory proc
 					mov r10, rcx
 					mov ax, SSN
