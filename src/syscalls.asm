@@ -18,6 +18,34 @@
 			ret
 	GetSyscallAddr endp
 
+	sysNtAllocateVirtualMemory proc
+					mov r10, rcx
+					mov ax, systemCall
+					jmp	qword ptr syscallAddr
+					ret
+	sysNtAllocateVirtualMemory endp
+
+	sysNtProtectVirtualMemory proc
+					mov r10, rcx
+					mov ax, systemCall
+					jmp	qword ptr syscallAddr
+					ret
+	sysNtProtectVirtualMemory endp
+
+	;sysNtCreateThreadEx proc
+	;				mov r10, rcx
+	;				mov ax, SSN
+	;				jmp	qword ptr syscallAddr
+	;				ret
+	;sysNtCreateThreadEx endp
+
+	;sysNtWaitForSingleObject proc
+	;				mov r10, rcx
+	;				mov ax, SSN
+	;				jmp	qword ptr syscallAddr
+	;				ret
+	;sysNtWaitForSingleObject endp
+
 	sysNtQueryInformationThread proc
 					mov r10, rcx
 					mov ax, SSN
