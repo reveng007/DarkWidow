@@ -20,14 +20,14 @@
 
 	sysNtAllocateVirtualMemory proc
 					mov r10, rcx
-					mov ax, systemCall
+					mov ax, SSN
 					jmp	qword ptr syscallAddr
 					ret
 	sysNtAllocateVirtualMemory endp
 
 	sysNtProtectVirtualMemory proc
 					mov r10, rcx
-					mov ax, systemCall
+					mov ax, SSN
 					jmp	qword ptr syscallAddr
 					ret
 	sysNtProtectVirtualMemory endp
