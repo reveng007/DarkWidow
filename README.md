@@ -4,11 +4,11 @@ This is a Dropper/PostExploitation Tool (or can be used in both situations) targ
 ### Capabilities:
 1. Indirect Dynamic Syscall
 2. SSN + Syscall address sorting via Modified TartarusGate approach
-3. Remote Process Injection via APC Early Bird
+3. Remote Process Injection via APC Early Bird (**MITRE ATT&CK TTP: [T1055.004](https://attack.mitre.org/techniques/T1055/004/)**)
 4. Spawns a sacrificial Process as the target process
 5. ACG(Arbitrary Code Guard)/BlockDll mitigation policy on spawned process
 6. PPID spoofing (**MITRE ATT&CK TTP: [T1134.004](https://attack.mitre.org/techniques/T1134/004/)**)
-7. Api resolving from TIB (Directly via offset (from TIB) -> TEB -> PEB -> resolve Nt Api)
+7. Api resolving from TIB (Directly via offset (from TIB) -> TEB -> PEB -> resolve Nt Api) (**MITRE ATT&CK TTP: [T1106](https://attack.mitre.org/techniques/T1106/)**)
 8. Cursed Nt API hashing
 
 ### Bonus: If blessed with Admin privilege =>
