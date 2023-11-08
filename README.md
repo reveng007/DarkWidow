@@ -20,7 +20,10 @@ This is a Dropper/PostExploitation Tool (or can be used in both situations) targ
 
 #### While Killing only those threads in the indirect syscall implant, was facing an error. I was unable to get the "**eventlog**" _SubProcessTag Value_. So thought of killing all threads, i.e. killing the whole process (responsible **svchost.exe**). Yeah creating ***an IOC***!.
 
-### = EDR/Ring-3/UserLand hook Bypass!
+### = 
+### 1. EDR/Ring-3/UserLand hook Bypass
+### 2. The syscall and return statement are executed from memory of ntdll.dll
+### 3. EDR detection based on checking the return address in the call stack can be bypassed.
 
 ### Compile:
 1.
