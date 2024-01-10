@@ -123,10 +123,10 @@ if __name__ == "__main__":
    - **PESieve**:\
    ![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/6.png)
 
-9. Capa Scan:\
+8. Capa Scan:\
    ![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/7.png)
 
-10. How Thread Stack Looks of the Implant Process:
+9. How Thread Stack Looks of the Implant Process:
 
 | Implant Process  |   Legit Cmd process    |
 | ---------------- | ---------------- |  
@@ -135,17 +135,22 @@ if __name__ == "__main__":
 > **It follows that by executing the return instruction in the memory of the ntdll.dll in the indirect syscall POC, the return address can be successfully spoofed, the ntdll.dll can be placed at the top of the call stack and the EDR will interpret a higher legitimacy.** - [@VirtualAllocEx](https://twitter.com/VirtualAllocEx) from [DirectSyscall Vs Indirect Syscall](https://redops.at/blog/direct-syscalls-vs-indirect-syscalls)\
 Also thanks to, [@peterwintrsmith](https://twitter.com/peterwintrsmith)!
 
-10. EventLogger Config, I used:
+10. Instrumentation CallBack Evasion:
+
+![image](https://github.com/reveng007/DarkWidow/assets/61424547/2869180b-a0fe-416a-95b3-c4b81565aa8f)
+
+
+11. EventLogger Config, I used:
 ![image](https://github.com/reveng007/DarkWidow/assets/61424547/c2005b8c-1750-4046-bffa-9d09eb4472a8)
 ![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/10.png)
 
-11. Setting SeDebugPrivilege:\
+12. Setting SeDebugPrivilege:\
    **From** Here:
    ![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/11.png)
    **To** Here:
    ![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/12.png)
 
-12. Killing Event Log Threads:
+13. Killing Event Log Threads:
     - [rto-win-evasion](https://institute.sektor7.net/rto-win-evasion) by [@SEKTOR7net](https://twitter.com/Sektor7Net)
     - [Phant0m](https://github.com/hlldz/Phant0m) by [@hlldz](https://twitter.com/hlldz)
     - [Goblin](https://github.com/reveng007/AQUARMOURY/blob/master/Goblin/Src/EventLog.h) by [@winterknife](https://twitter.com/_winterknife_)
