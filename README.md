@@ -62,6 +62,9 @@ https://github.com/reveng007/DarkWidow/assets/61424547/62a90c5b-84af-4389-8ddc-9
 2. ***Much Stealthier*** Use Case of EventLog Disabling!
 -----
 
+### Honourable Mentions:
+1. [BlackHat Asia, 2024 - Call For Tools](https://www.blackhat.com/asia-24/arsenal/schedule/index.html#darkwidow-dropperpostexploitation-tool-or-can-be-used-in-both-situations-targeting-windows-36835)
+
 ### Portions of the Code and links those helped:
 1. TIB:
    - https://en.wikipedia.org/wiki/Win32_Thread_Information_Block
