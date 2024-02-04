@@ -154,16 +154,17 @@ Also thanks to, [@peterwintrsmith](https://twitter.com/peterwintrsmith)!
 
 
 11. EventLogger Config, I used:
-![image](https://github.com/reveng007/DarkWidow/assets/61424547/c2005b8c-1750-4046-bffa-9d09eb4472a8)
-![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/10.png)
 
-12. Setting SeDebugPrivilege:\
+![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/10.png)
+![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/11.jpg)
+
+13. Setting SeDebugPrivilege:\
    **From** Here:
    ![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/11.png)
    **To** Here:
    ![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/12.png)
 
-13. Killing Event Log Threads:
+14. Killing Event Log Threads:
     - [rto-win-evasion](https://institute.sektor7.net/rto-win-evasion) by [@SEKTOR7net](https://twitter.com/Sektor7Net)
     - [Phant0m](https://github.com/hlldz/Phant0m) by [@hlldz](https://twitter.com/hlldz)
     - [Goblin](https://github.com/reveng007/AQUARMOURY/blob/master/Goblin/Src/EventLog.h) by [@winterknife](https://twitter.com/_winterknife_)
