@@ -148,7 +148,7 @@ if __name__ == "__main__":
 > **It follows that by executing the return instruction in the memory of the ntdll.dll in the indirect syscall POC, the return address can be successfully spoofed, the ntdll.dll can be placed at the top of the call stack and the EDR will interpret a higher legitimacy.** - [@VirtualAllocEx](https://twitter.com/VirtualAllocEx) from [DirectSyscall Vs Indirect Syscall](https://redops.at/blog/direct-syscalls-vs-indirect-syscalls)\
 Also thanks to, [@peterwintrsmith](https://twitter.com/peterwintrsmith)!
 
-10. Instrumentation CallBack Evasion:
+10. Instrumentation CallBack Evasion: Used this [POC - syscall-detect](https://github.com/jackullrich/syscall-detect) by [winternl_t](https://twitter.com/winternl_t)
 
 ![image](https://github.com/reveng007/DarkWidow/assets/61424547/2869180b-a0fe-416a-95b3-c4b81565aa8f)
 
