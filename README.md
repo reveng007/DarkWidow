@@ -56,7 +56,7 @@ PS C:> .\x64\Release\indirect.exe
 
 https://github.com/reveng007/DarkWidow/assets/61424547/62a90c5b-84af-4389-8ddc-9f7926debdcf
 
-### Sofos XDR Bypass:
+### Successful Execution WithOut Creating Alert on Sofos XDR EndPoint:
 
 ![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/SofosXDR.PNG)
 
