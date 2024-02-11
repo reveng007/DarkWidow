@@ -2,7 +2,6 @@
 // Taken From : https://github.com/reveng007/AQUARMOURY/blob/1923e65190875f7c61c76fb430d526e5deaa062a/Wraith/Src/Syscalls.h
 #include <Windows.h>
 
-/*
 #define InitializeObjectAttributes( p, n, a, r, s ) { \
 (p)->Length = sizeof( OBJECT_ATTRIBUTES );        \
 (p)->RootDirectory = r;                           \
@@ -11,7 +10,7 @@
 (p)->SecurityDescriptor = s;                      \
 (p)->SecurityQualityOfService = NULL;             \
 }
-*/
+
 /*
 #define InitializeObjectAttributes1(p,n,a,r,s) { \
 	(p)->Length = sizeof(OBJECT_ATTRIBUTES); \
@@ -34,13 +33,30 @@ VOID InitializeObjectAttributes(
 );
 */
 // From ntapi.h
-/*
+
+typedef enum _PROCESSINFOCLASS {
+	ProcessBasicInformation = 0,
+	ProcessDebugPort = 7,
+	ProcessWow64Information = 26,
+	ProcessImageFileName = 27,
+	ProcessBreakOnTermination = 29
+} PROCESSINFOCLASS, * PPROCESSINFOCLASS;
+
+typedef struct _UNICODE_STRING {
+	USHORT Length;
+	USHORT MaximumLength;
+	PWSTR  Buffer;
+} UNICODE_STRING, * PUNICODE_STRING;
+
 typedef struct _OBJECT_ATTRIBUTES {
 	ULONG Length;
 	HANDLE RootDirectory;
-	PUNICODE_STRING ObjectName; ULONG Attributes; PVOID SecurityDescriptor; PVOID SecurityQualityOfService;
+	PUNICODE_STRING ObjectName;
+	ULONG Attributes;
+	PVOID SecurityDescriptor;
+	PVOID SecurityQualityOfService;
 } OBJECT_ATTRIBUTES, * POBJECT_ATTRIBUTES;
-*/
+
 
 // ====================== Structures for svchost =============================
 
@@ -63,12 +79,6 @@ typedef struct _CLIENT_ID {
 	PVOID UniqueProcess;
 	PVOID UniqueThread;
 } CLIENT_ID, * PCLIENT_ID;
-
-typedef struct _UNICODE_STRING {
-	USHORT Length;
-	USHORT MaximumLength;
-	PWSTR  Buffer;
-} UNICODE_STRING, * PUNICODE_STRING;
 
 typedef struct _RTL_USER_PROCESS_PARAMETERS {
 	BYTE           Reserved1[16];
