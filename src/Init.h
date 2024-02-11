@@ -221,5 +221,3 @@ NtQueryInformationThread_t NtQueryInformationThread = (NtQueryInformationThread_
 
 //using QueryServiceStatusExPrototype = BOOL(WINAPI*)(SC_HANDLE, SC_STATUS_TYPE, LPBYTE, DWORD, LPDWORD);
 //QueryServiceStatusExPrototype QueryServiceStatusEx = (QueryServiceStatusExPrototype)GetProcAddress(GetModuleHandleA(sadvapi32_dll), sQueryServiceStatusEx);
-
-
