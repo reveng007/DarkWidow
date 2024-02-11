@@ -99,23 +99,43 @@ https://github.com/reveng007/DarkWidow/assets/61424547/62a90c5b-84af-4389-8ddc-9
    - A pic of the snippet from the above link, which I used here to resolve API dynamically without HardCoding Offsets:\
      ![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/3.png)
 
-   - The Api hashing Script that I have Used:
-```python
-def create_hash(input_string):
-    # Initialize the hash value to zero
-    hash_value = 0
+   - The Api hashing code that I applied:
+```cpp
 
-    # Iterate through each character in the input string
-    for char in input_string:
-        # Add the ASCII value of the character to the hash_value
-        hash_value += ord(char)
+#include <stdint.h>
+#include <stdio.h>
+#include <Windows.h>
 
-    return hash_value
+DWORD64 djb2(const char* str)
+{
+	DWORD64 dwHash = 0x7734773477347734;
+	int c;
 
-if __name__ == "__main__":
-    input_string = input("Enter the string to hash: ")
-    hashed_value = create_hash(input_string)
-    print("Hash:", hashed_value)
+	while (c = *str++)
+		dwHash = ((dwHash << 0x5) + dwHash) + c;
+
+
+	return dwHash;
+}
+
+int main(int argc, char** argv)
+{
+	if (argc < 2)
+	{
+		printf("[!] Wrong!\n");
+		printf("[->] Syntax: .\\%s <NTFuncName>\n\n", argv[0]);
+		return 1;
+	}
+
+	const char* string = argv[1];
+
+	DWORD64 hashvalue = djb2(string);
+
+	printf("Hash Value: 0x%llX\n", hashvalue);
+
+	return 0;
+}
+
 ```
 
 5. ACG(Arbitrary Code Guard)/BlockDll mitigation policy:
