@@ -58,7 +58,7 @@ https://github.com/reveng007/DarkWidow/assets/61424547/62a90c5b-84af-4389-8ddc-9
 
 ### Successful Execution WithOut Creating Alert on Sofos XDR EndPoint:
 
-![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/SofosXDR.PNG)
+![SofosXDREvade](https://github.com/reveng007/DarkWidow/assets/61424547/80744d51-3c93-4399-8b20-a112866a5d64)
 
 -----
 
