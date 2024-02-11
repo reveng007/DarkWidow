@@ -14,7 +14,7 @@ void int2hex(int SystemCall)
 {
 	char hex_string[20];
 	sprintf(hex_string, "%X", SystemCall); //convert number to hex
-	printf("[+] Sorted SSN %s", hex_string);
+	printf("[+] Sorted SSN(hex) %s", hex_string);
 	//cout << "[+] Sorted SSN " << hex_string;
 }
 
@@ -37,7 +37,8 @@ WORD SortSSN(LPVOID ntapiaddr)
 		BYTE low = *((PBYTE)ntapiaddr + 4);
 		SystemCall = (high << 8) | low;
 
-		int2hex(SystemCall);
+		printf("SSN(short): %hd", SystemCall);
+		int2hex((int)SystemCall);
 
 		return SystemCall;
 	}
@@ -75,6 +76,7 @@ WORD SortSSN(LPVOID ntapiaddr)
 				BYTE low = *((PBYTE)ntapiaddr + 4 + idx * DOWN);
 				SystemCall = (high << 8) | low - idx;
 
+				printf("[neighbouring: DOWN] SSN (int): %d", SystemCall);
 				int2hex(SystemCall);
 
 				return SystemCall;
@@ -92,6 +94,7 @@ WORD SortSSN(LPVOID ntapiaddr)
 				BYTE low = *((PBYTE)ntapiaddr + 4 + idx * UP);
 				SystemCall = (high << 8) | low + idx;
 
+				printf("[neighbouring: UP] SSN (int): %d", SystemCall);
 				int2hex(SystemCall);
 
 				return SystemCall;
