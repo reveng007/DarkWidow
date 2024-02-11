@@ -55,7 +55,7 @@ int KillEventLogThreads()
 	// Change to: NtOpenProcess after knowing the fix for "POBJECT_ATTRIBUTES ObjectAttributes" issue
 
 	using OpenProcessPrototype = HANDLE(WINAPI*)(DWORD, BOOL, DWORD);
-	OpenProcessPrototype OpenProcess = (OpenProcessPrototype)GetProcAddress(GetModuleHandleA(kernel32), sOpenProcess);
+	OpenProcessPrototype OpenProcess = (OpenProcessPrototype)GetProcAddress(GetModuleHandleA(win32), sOpenP);
 
 	// Getting a Handle to svchost.exe containing Eventlog Service Threads
 	HANDLE hSVC = NULL;
