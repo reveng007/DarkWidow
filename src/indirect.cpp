@@ -3,7 +3,7 @@
 #include <string>
 
 #include "SyscallStuff.h"
-#include "shellcode.h"
+//#include "shellcode.h"
 
 // EventLogger Thread Kill
 #include "SeDebugPrivilege.h"
