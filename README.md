@@ -8,16 +8,18 @@
 This is a Dropper/PostExploitation Tool (or can be used in both situations) targeting Windows.
 
 ### Capabilities:
-1. Indirect Dynamic Syscall
+
+1. Indirect Dynamic Syscall. (MITRE ATT&CK TTP: [T1106](https://attack.mitre.org/techniques/T1106/))
 2. SSN + Syscall address sorting via Modified TartarusGate approach
-3. Remote Process Injection via APC Early Bird (**MITRE ATT&CK TTP: [T1055.004](https://attack.mitre.org/techniques/T1055/004/)**)
-4. Spawns a sacrificial Process as the target process
-5. ACG(Arbitrary Code Guard)/BlockDll mitigation policy on spawned process
+3. Remote Process Injection via APC Early Bird to CUT OFF telemetry Catching by EDR. (**MITRE ATT&CK TTP: [T1055.004](https://attack.mitre.org/techniques/T1055/004/)**)
+4. Spawns a sacrificial Process as the target process, not disrupting already open processes in the environment.
+5. ACG(Arbitrary Code Guard)/BlockDll mitigation policy on spawned sacrificial process.
 6. PPID spoofing (**MITRE ATT&CK TTP: [T1134.004](https://attack.mitre.org/techniques/T1134/004/)**)
-7. Api resolving from TIB (Directly via offset (from TIB) -> TEB -> PEB -> resolve Nt Api) (**MITRE ATT&CK TTP: [T1106](https://attack.mitre.org/techniques/T1106/)**)
-8. Cursed Nt API hashing
+7. Api and Dll resolving from TIB (Directly via offset (from TIB) -> TEB -> PEB -> resolve Nt Api) (**MITRE ATT&CK TTP: [T1106](https://attack.mitre.org/techniques/T1106/)**)
+8. Cursed Nt API hashing (MITRE ATT&CK ID: [S0574](https://attack.mitre.org/software/S0574/))
 
 ### Bonus: If blessed with Admin privilege =>
+
 1. Disables Event Log via _killing_ EventLog Service Threads (**MITRE ATT&CK TTP: [T1562.002](https://attack.mitre.org/techniques/T1562/002/)**)
 > **Disadv**: If threads are resumed, all events that occurred during the suspension of Event Logger, get logged Again!
 
@@ -77,6 +79,7 @@ https://github.com/reveng007/DarkWidow/assets/61424547/62a90c5b-84af-4389-8ddc-9
 -----
 
 ### Portions of the Code and links those helped:
+
 1. TIB:
    - https://en.wikipedia.org/wiki/Win32_Thread_Information_Block
    - https://www.wikiwand.com/en/Win32_Thread_Information_Block
@@ -173,7 +176,6 @@ Also thanks to, [@peterwintrsmith](https://twitter.com/peterwintrsmith)!
 
 ![image](https://github.com/reveng007/DarkWidow/assets/61424547/2869180b-a0fe-416a-95b3-c4b81565aa8f)
 
-
 11. EventLogger Config, I used:
 
 ![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/10.png)
@@ -196,7 +198,46 @@ Also thanks to, [@peterwintrsmith](https://twitter.com/peterwintrsmith)!
     ![alt text](https://github.com/reveng007/DarkWidow/blob/main/img/14.png)
     - **This Method, Ended up causing errors in indirect syscall implementation. So, I ended up killing all those threads present within responsible svchost.exe** (reason: [Go up](https://github.com/reveng007/DarkWidow/edit/main/README.md#bonus-if-blessed-with-admin-privilege-)).
 
+### Sophos XDR Event Loging Scenario:
+
+1. Case 1: When Darkwidow executed under normal privilege
+
+![image](https://github.com/reveng007/DarkWidow/assets/61424547/4a2c3dde-7eac-4828-a0be-90f7427c1d65)
+
+> No Critical Alerts gets created except One Low Severity Log!
+
+2. Case 2: When Darkwidow executed under Admin privilege
+
+![image](https://github.com/reveng007/DarkWidow/assets/61424547/4e6c84b6-0cb2-47d2-b74a-1b01b9126299)
+
+> One Low Severity Log => APC Injection (Like Before)
+
+![image](https://github.com/reveng007/DarkWidow/assets/61424547/89924920-3766-4395-a186-6705cf7e84d3)
+
+> Another one which is a Medium Severity Log occured for setting `SeDebugPrivilege`.
+
+![image](https://github.com/reveng007/DarkWidow/assets/61424547/7a36d21e-559c-40c5-985b-cdd22eda204e)
+
+# DarkWidow V2:
+
+#### To get around this Event Logging Detection, I added the concept of `Synthetic Frame Thread Stack Spoofing` into it.
+
+This is how stack looks after applying synthetic frame thread stack spoofing.
+
+![image](https://github.com/reveng007/DarkWidow/assets/61424547/9d978a9d-ee01-4379-9bc6-87caa37e5255)
+> This is the NT api Thread Stack
+
+![image](https://github.com/reveng007/DarkWidow/assets/61424547/b9c24f7e-abfb-4f5e-89b5-35225d49d53d)
+> This is the shellcode (btw, this is not custom made, this is Havoc Shellcode :)) thread stack.
+
+For shellcode development, I have used havoc and this below configuration:
+
+![image](https://github.com/reveng007/DarkWidow/assets/61424547/f17ae8ba-205e-41fa-b144-b81305fe29eb)
+
+
+
 ### Major Thanks for helping me out (Directly/indirectly (pun NOT intended :))):
+
 1. [@SEKTOR7net](https://twitter.com/Sektor7Net)
 2. [@peterwintrsmith](https://twitter.com/peterwintrsmith)
 3. [@Jean_Maes_1994](https://twitter.com/Jean_Maes_1994)
