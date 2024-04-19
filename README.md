@@ -234,6 +234,13 @@ For shellcode development, I have used havoc and this below configuration:
 
 ![image](https://github.com/reveng007/DarkWidow/assets/61424547/f17ae8ba-205e-41fa-b144-b81305fe29eb)
 
+### Demo Execution Pic:
+
+![1708744707672](https://github.com/reveng007/DarkWidow/assets/61424547/0ab56b7c-9365-4837-95e4-f172cbab8e61)
+
+### Demo Video against Sophos XDR:
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HqtXD3CJg9k/0.jpg)](https://www.youtube.com/watch?v=HqtXD3CJg9k)
 
 
 ### Major Thanks for helping me out (Directly/indirectly (pun NOT intended :))):
