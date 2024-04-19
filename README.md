@@ -3,7 +3,7 @@
 [![Black Hat Arsenal](https://raw.githubusercontent.com/toolswatch/badges/master/arsenal/asia/2023.svg?sanitize=true)](https://www.toolswatch.org/blackhat-arsenal-us-2011-archive/)
 
 - Change the Badge Year to 2024 (when it is available: https://github.com/toolswatch/badges/tree/master/arsenal/asia)
-- If required, create this MD file: https://github.com/toolswatch/blackhat-arsenal-tools/blob/master/tool_name.md
+- If required, create MD file in this format: https://github.com/toolswatch/blackhat-arsenal-tools/blob/master/tool_name.md
 
 This is a Dropper/PostExploitation Tool (or can be used in both situations) targeting Windows.
 
