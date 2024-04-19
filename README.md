@@ -234,13 +234,35 @@ For shellcode development, I have used havoc and this below configuration:
 
 ![image](https://github.com/reveng007/DarkWidow/assets/61424547/f17ae8ba-205e-41fa-b144-b81305fe29eb)
 
+### NOTE:
+Newly Created Thread Start Address Spoofing was not really required in this project cause within APC Injection technique, APC hijacks the execution of an already and legit running thread. Thanks to [@C5pider](https://twitter.com/C5pider)!
+
 ### Demo Execution Pic:
 
 ![1708744707672](https://github.com/reveng007/DarkWidow/assets/61424547/0ab56b7c-9365-4837-95e4-f172cbab8e61)
 
 ### Demo Video against Sophos XDR:
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HqtXD3CJg9k/0.jpg)](https://www.youtube.com/watch?v=HqtXD3CJg9k)
+[![Demo Video Youtube Link](https://img.youtube.com/vi/HqtXD3CJg9k/0.jpg)](https://www.youtube.com/watch?v=HqtXD3CJg9k)
+
+Now Status On Event Logs ?
+
+![image](https://github.com/reveng007/DarkWidow/assets/61424547/375e8d6d-ac45-4959-bfb9-bc0fdc71f0ed)
+
+> No logs got generated.
+> I also have removed the Event Logger Killing part from the DarkWidow V2, which decreases down the Event generation too!
+
+### My BlackHat Arsenal Demo Video can be found in here:
+
+[![Demo Video Youtube Link](https://img.youtube.com/vi/1mserrlZHEE/0.jpg)](https://www.youtube.com/watch?v=1mserrlZHEE)
+
+### Future Updates to this:
+
+1. Porting this version to C++ Clang Compiler, which would help us to perform LLVM obfuscation.
+2. Upgrading to NtCreateUserProcess() to perform indirect syscall and stack spoofing.
+3. Applying Manual Load Library capability for bypassing Image Load Kernel Callbacks.
+4. Applying Module Stomping capability.
+5. Encrypted shellcode Injection to avoid Kernel triggered memory scans ([Caro-Kann](https://github.com/S3cur3Th1sSh1t/Caro-Kann)).
 
 
 ### Major Thanks for helping me out (Directly/indirectly (pun NOT intended :))):
@@ -256,6 +278,11 @@ For shellcode development, I have used havoc and this below configuration:
 9. [@monnappa22](https://twitter.com/monnappa22)
 10. [@_xpn_](https://twitter.com/_xpn_)
 11. [@hlldz](https://twitter.com/hlldz)
+12. [@d_tranman](https://twitter.com/d_tranman)
+13. [@SoumyadeepBas12](https://twitter.com/SoumyadeepBas12)
+14. [@jack_halon](https://twitter.com/jack_halon)
+15. [@KlezVirus](https://twitter.com/KlezVirus)
+16. [@C5pider](https://twitter.com/C5pider)
 
 I hope I didn't miss someone!
 
