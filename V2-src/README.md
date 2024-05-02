@@ -1,6 +1,11 @@
 ### Compile using compile.bat:
 ```
+@ECHO OFF
 
+del spoof_DarkWidow.exe
+nasm.exe -f win64 test_nasm.asm -o test_nasm.o
+gcc spoof_DarkWidow.c -masm=intel test_nasm.o -o spoof_DarkWidow.exe
+del test_nasm.o
 ```
 
 If unable to compile, download this version of gcc to compile the above binary:
