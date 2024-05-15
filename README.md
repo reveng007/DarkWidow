@@ -1,6 +1,6 @@
 # DarkWidow
 
-This is a Dropper/PostExploitation Tool (or can be used in both situations) targeting Windows.
+A Customizable Dropper Tool targeting Windows.
 
 ### Capabilities:
 
@@ -69,6 +69,7 @@ https://github.com/reveng007/DarkWidow/assets/61424547/62a90c5b-84af-4389-8ddc-9
 
 ### Honourable Mentions:
 1. [BlackHat Asia, 2024 - Call For Tools](https://www.blackhat.com/asia-24/arsenal/schedule/index.html#darkwidow-dropperpostexploitation-tool-or-can-be-used-in-both-situations-targeting-windows-36835)
+2. [BlackHat USA, 2024 - Call For Tools](https://www.blackhat.com/us-24/arsenal/schedule/presenters.html#soumyanil-biswas-47163)
 - Thanks a lot to Soumyadeep Da aka [@SoumyadeepBas12](https://twitter.com/SoumyadeepBas12) for encouraging me to apply for this opportunity, else I wouldn't have done it :)
 - Thanks a lot to Faran aka [@Chrollo_l33t](https://twitter.com/Chrollo_l33t) for helping me to create the Slides and PPT for the presentation for this tool :)
 -----
