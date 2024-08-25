@@ -7,6 +7,8 @@ A Customizable Dropper Tool targeting Windows.
 ### Honourable Mentions:
 1. [BlackHat Asia, 2024 - Call For Tools](https://www.blackhat.com/asia-24/arsenal/schedule/presenters.html#soumyanil-biswas-47163)
 2. [BlackHat USA, 2024 - Call For Tools](https://www.blackhat.com/us-24/arsenal/schedule/presenters.html#soumyanil-biswas-47163)
+3. [BlackHat SecTor, 2024 - Call For Tools](https://www.blackhat.com/sector/2024/arsenal/schedule/presenters.html#soumyanil-biswas-47163)
+
 - Thanks a lot to Soumyadeep Da aka [@SoumyadeepBas12](https://twitter.com/SoumyadeepBas12) for encouraging me to apply for these conferences, else I wouldn't have done it :)
 - Thanks a lot to Faran aka [@Chrollo_l33t](https://twitter.com/Chrollo_l33t) for helping me to create the Slides and PPT for the presentation for this tool :)
 -----
