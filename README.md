@@ -254,6 +254,10 @@ Now Status On Event Logs ?
 
 [![Demo Video Youtube Link](https://img.youtube.com/vi/1mserrlZHEE/0.jpg)](https://www.youtube.com/watch?v=1mserrlZHEE)
 
+### My WildWestHackinFest Presentation Slide can be found in here:
+
+[Google Slide link](https://docs.google.com/presentation/d/1Qel94kLSzSctwe8BeYCCo5yZAijtjZqzg7uC2HIbkFQ/edit?usp=sharing)
+
 ### Future Updates to this:
 
 1. Porting this version to C++ Clang Compiler, which would help us to perform LLVM obfuscation.
