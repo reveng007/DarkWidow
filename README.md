@@ -8,6 +8,8 @@ A Customizable Dropper Tool targeting Windows.
 1. [BlackHat Asia, 2024 - Call For Tools](https://www.blackhat.com/asia-24/arsenal/schedule/presenters.html#soumyanil-biswas-47163)
 2. [BlackHat USA, 2024 - Call For Tools](https://www.blackhat.com/us-24/arsenal/schedule/presenters.html#soumyanil-biswas-47163)
 3. [BlackHat SecTor, 2024 - Call For Tools](https://www.blackhat.com/sector/2024/arsenal/schedule/presenters.html#soumyanil-biswas-47163)
+4. [BlackHat Europe, 2024 - Call For Tools](https://www.blackhat.com/eu-24/arsenal/schedule/index.html#darkwidow-customizable-dropper-tool-targeting-windows-41187)
+5. [Wild West Hacking Fest 2024 - Arsenal](https://wildwesthackinfest.com/agenda-for-wwhf-2024-deadwood/)
 
 - Thanks a lot to Soumyadeep Da aka [@SoumyadeepBas12](https://twitter.com/SoumyadeepBas12) for encouraging me to apply for these conferences, else I wouldn't have done it :)
 - Thanks a lot to Faran aka [@Chrollo_l33t](https://twitter.com/Chrollo_l33t) for helping me to create the Slides and PPT for the presentation for this tool :)
