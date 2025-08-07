@@ -256,9 +256,10 @@ Now Status On Event Logs ?
 
 [![Demo Video Youtube Link](https://img.youtube.com/vi/1mserrlZHEE/0.jpg)](https://www.youtube.com/watch?v=1mserrlZHEE)
 
-### My WildWestHackinFest Presentation Slide can be found in here:
+### My WildWestHackinFest Presentation Slide and video link can be found in here:
 
-[Google Slide link](https://docs.google.com/presentation/d/1Qel94kLSzSctwe8BeYCCo5yZAijtjZqzg7uC2HIbkFQ/edit?usp=sharing)
+1. [Google Slide link](https://docs.google.com/presentation/d/1Qel94kLSzSctwe8BeYCCo5yZAijtjZqzg7uC2HIbkFQ/edit?usp=sharing)
+2. https://www.youtube.com/watch?v=xsibDZ6BpyA&t=1295s
 
 ### Future Updates to this:
 
